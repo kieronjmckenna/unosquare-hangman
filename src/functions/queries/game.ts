@@ -2,7 +2,7 @@ import { prisma } from "../../clients/prisma"
 import { Query, QueryGameArgs } from "../../generated/resolvers-types"
 import { createWordGuessedSoFar } from '../helpers/create-word-guessed-so-far'
 
-export const game = async ({id}: QueryGameArgs): Promise<Query['game']> => {
+export const game = async (_: any, {id}: QueryGameArgs): Promise<Query['game']> => {
   const game = await prisma.game.findUnique({
     where: {
       id

@@ -10,13 +10,11 @@ const typeDefs = readFileSync('./schema.graphql', 'utf8')
  
 const resolvers: Resolvers = {
   Query: {
-    game: (_, args) => game(args)
+    game
   },
   Mutation: {
-    createGame: {
-      resolve: createGame,
-    },
-    guess: (_, args) => guess(args)
+    createGame,
+    guess
   }
 }
  
