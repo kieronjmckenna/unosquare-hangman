@@ -1,0 +1,20 @@
+type Game {
+  id: Int!
+  word: String!
+  guesses: [String!]!
+}
+
+
+type GuessResponse {
+  word: String!
+  guessCorrect: Boolean!
+}
+
+type Query {
+  game(id: Int!): Game!
+}
+
+type Mutation {
+  createGame: Int!
+  guess(gameId: Int!, guess: String!): GuessResponse!
+}
